@@ -1,26 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./components/home";
-import Login from "./components/login";
-import NoPage from "./components/nopage";
-import Register from "./components/register";
-import "bootstrap/dist/css/bootstrap.css"
-import "bootstrap/dist/js/bootstrap.bundle"
+import Lay from './components/Lay';
+import Main from './components/Main';
+import Menu from './components/Menu';
+import About from './components/About';
+import Page from './components/Page';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 function App() {
   return (
-    <><BrowserRouter>
+    
+    <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="Register" element={<Register />} />
-        <Route path="*" element={<NoPage />} />
+      <Route path="/" element={<Lay />}>
+        <Route index element={<Main />} />
+        <Route path="menu" element={<Menu />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Page />} />
       </Route>
     </Routes>
   </BrowserRouter>
-  </>
   );
 }
 
